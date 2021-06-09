@@ -2,6 +2,7 @@ package com.project.cometa.Controller;
 
 import java.util.Optional;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,5 +31,10 @@ public class ControllerDescoberta {
 	@GetMapping("/{id}")
 	public Optional<Descobertas> list(@PathVariable Long id){
 		return serviceDescoberta.listComet(id);
+	}
+	
+	@DeleteMapping("/{id}")
+	public void delete(@PathVariable Long id) {
+		serviceDescoberta.deleteComet(id);
 	}
  }
