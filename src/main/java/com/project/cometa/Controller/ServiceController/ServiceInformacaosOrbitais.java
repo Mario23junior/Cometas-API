@@ -37,4 +37,15 @@ public class ServiceInformacaosOrbitais {
 		                          }).orElseThrow(() -> new ResourceNotFoundExceptionIntercept("Nenhuma informação encontrada na base de dados"));
 		                          
 	}
+	
+	public void updateInformatOrbi(InformacaosOrbitais informacaosOrbitais, Long id) {
+		repositoryInformacaosOrbitas 
+		                           .findById(id)
+		                           .map(updateInfor -> {
+		                              informacaosOrbitais.setId(updateInfor.getId());
+		                              repositoryInformacaosOrbitas.save(informacaosOrbitais);
+		                              return updateInfor;
+		                           }).orElseThrow(() -> new ResourceNotFoundExceptionIntercept("Nenhuma informação encontrada para atualizar informações"));
+	}
+	
 }
