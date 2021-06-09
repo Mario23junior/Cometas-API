@@ -2,10 +2,9 @@ package com.project.cometa.Controller.ServiceController;
 
 import java.util.Optional;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
+import com.project.cometa.Exception.ResourceNotFoundExceptionIntercept;
 import com.project.cometa.Model.Descobertas;
 import com.project.cometa.Repositorys.RepositoryDescobertas;
 
@@ -25,7 +24,7 @@ public class ServiceDescoberta {
 	
 	public Optional<Descobertas> listComet(Long id){
 		Optional<Descobertas> list = repositoryDescobertas.findById(id);
-		list.orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT, "Nenhum cometa encontrado"));
+		list.orElseThrow(() -> new ResourceNotFoundExceptionIntercept("Nenhum cometa encontrado"));
 		return list;
 	}
 }
