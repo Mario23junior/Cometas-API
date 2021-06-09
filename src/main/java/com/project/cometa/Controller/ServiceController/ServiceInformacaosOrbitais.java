@@ -22,9 +22,19 @@ public class ServiceInformacaosOrbitais {
 		return saveInfoOrb;
 	}
 	
-	public Optional<InformacaosOrbitais> listByComet(Long id) {
+	public Optional<InformacaosOrbitais> listByInformatOrbit(Long id) {
 		Optional<InformacaosOrbitais> list = repositoryInformacaosOrbitas.findById(id);
 		list.orElseThrow(() -> new ResourceNotFoundExceptionIntercept("informação não encontrada"));
 		return list;
+	}
+	
+	public void deleteInformatOrbi(Long id) {
+		repositoryInformacaosOrbitas 
+		                          .findById(id)
+		                          .map(deleteId -> {
+		                        	  repositoryInformacaosOrbitas.deleteById(id);
+		                        	  return deleteId;
+		                          }).orElseThrow(() -> new ResourceNotFoundExceptionIntercept("Nenhuma informação encontrada na base de dados"));
+		                          
 	}
 }
