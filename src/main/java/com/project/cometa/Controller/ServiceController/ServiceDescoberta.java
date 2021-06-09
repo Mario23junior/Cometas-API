@@ -27,4 +27,13 @@ public class ServiceDescoberta {
 		list.orElseThrow(() -> new ResourceNotFoundExceptionIntercept("Nenhum cometa encontrado"));
 		return list;
 	}
+	
+	public void deleteComet(Long id) {
+		repositoryDescobertas
+		              .findById(id)
+		              .map(delete -> {
+		            	  repositoryDescobertas.deleteById(id);
+ 		            	  return delete;
+		              }).orElseThrow(() -> new ResourceNotFoundExceptionIntercept("Nenhum cometa encontrado para ser deletado"));
+	}
 }
