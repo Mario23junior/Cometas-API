@@ -36,4 +36,14 @@ public class ServiceMapaOrbital {
 		                        return deleteMapa;
 		                    }).orElseThrow(() -> new ResourceNotFoundExceptionIntercept("Nehuma informação foi encontrada para deletar"));
 	}
+	
+	public void updateMaperOrbit(Long id, MapaOrbital mapaOrbital) {
+		repositoryMapaOrbital 
+		                    .findById(id)
+		                    .map(updateMap -> {
+		                       mapaOrbital.setId(updateMap.getId());
+		                       repositoryMapaOrbital.save(mapaOrbital);
+		                       return updateMap;
+		                    }).orElseThrow(() -> new ResourceNotFoundExceptionIntercept("id "+ id +" não encontrado para atualizar"));
+	}
 }
