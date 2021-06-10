@@ -35,4 +35,14 @@ public class ServicePropriedadesFisicas {
 		                        	  return deleteData;
 		                           }).orElseThrow(() -> new ResourceNotFoundExceptionIntercept("nenhuma informacao para ser deletada"));
 	}
+	
+	public void updateDataPropriedadesFisicas(Long id, PropriedadesFisicas propriedadesFisicas) {
+		repositoryPropriedadesFisicas
+		                            .findById(id)
+		                            .map(updateData -> {
+		                               propriedadesFisicas.setId(updateData.getId());
+		                               repositoryPropriedadesFisicas.save(propriedadesFisicas);
+		                               return updateData;
+		                            }).orElseThrow(() -> new ResourceNotFoundExceptionIntercept("Nenhuma informação para ser atualizada"));
+	}
 }
