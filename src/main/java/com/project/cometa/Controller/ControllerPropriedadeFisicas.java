@@ -2,6 +2,7 @@ package com.project.cometa.Controller;
 
 import java.util.Optional;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,5 +31,10 @@ public class ControllerPropriedadeFisicas {
 	@GetMapping("/{id}")
 	 public Optional<PropriedadesFisicas> list(@PathVariable Long id) {
 		return servicePropriedadesFisicas.listPropriedadesFisicas(id);
+	}
+	
+	@DeleteMapping("/{id}")
+	public void delete(@PathVariable Long id){
+		   servicePropriedadesFisicas.deletePropriedadesFisicas(id);
 	}
 }

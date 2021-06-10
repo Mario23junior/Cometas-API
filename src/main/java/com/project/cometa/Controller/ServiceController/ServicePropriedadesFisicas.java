@@ -26,4 +26,13 @@ public class ServicePropriedadesFisicas {
 		 list.orElseThrow(() -> new ResourceNotFoundExceptionIntercept("Nenhum dado para ser exibido"));
 		 return list;
 	}
+	
+	public void deletePropriedadesFisicas(Long id) {
+		repositoryPropriedadesFisicas
+		                           .findById(id)
+		                           .map(deleteData -> {
+		                        	  repositoryPropriedadesFisicas.deleteById(id);
+		                        	  return deleteData;
+		                           }).orElseThrow(() -> new ResourceNotFoundExceptionIntercept("nenhuma informacao para ser deletada"));
+	}
 }
