@@ -11,20 +11,29 @@ import com.project.cometa.Repositorys.RepositoryMapaOrbital;
 @Service
 public class ServiceMapaOrbital {
    
-	private RepositoryMapaOrbital repoisRepositoryMapaOrbital;
+	private RepositoryMapaOrbital repositoryMapaOrbital;
 	
-	public ServiceMapaOrbital(RepositoryMapaOrbital repoisRepositoryMapaOrbital) {
-		this.repoisRepositoryMapaOrbital = repoisRepositoryMapaOrbital;
+	public ServiceMapaOrbital(RepositoryMapaOrbital repositoryMapaOrbital) {
+		this.repositoryMapaOrbital = repositoryMapaOrbital;
 	}
 	
 	public MapaOrbital salvarMapaOrbi(MapaOrbital mapaOrbital) {
-		MapaOrbital saveInfo = repoisRepositoryMapaOrbital.save(mapaOrbital);
+		MapaOrbital saveInfo = repositoryMapaOrbital.save(mapaOrbital);
 		return saveInfo;
 	}
 	
 	public Optional<MapaOrbital> listMapaOrbit(Long id) {
-		Optional<MapaOrbital> list = repoisRepositoryMapaOrbital.findById(id);
+		Optional<MapaOrbital> list = repositoryMapaOrbital.findById(id);
 		list.orElseThrow(() -> new ResourceNotFoundExceptionIntercept("Nenhuma informação para ser exibida que conresponda a esse valor"));
 		return list;
+	}
+	
+	public void deletarMapaOrbit(Long id) {
+		repositoryMapaOrbital
+		                    .findById(id)
+		                    .map(deleteMapa -> {
+		                        repositoryMapaOrbital.deleteById(id); 
+		                        return deleteMapa;
+		                    }).orElseThrow(() -> new ResourceNotFoundExceptionIntercept("Nehuma informação foi encontrada para deletar"));
 	}
 }
