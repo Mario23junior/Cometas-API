@@ -1,5 +1,7 @@
 package com.project.cometa.DTOModel;
 
+import java.util.List;
+
 public class DescobertasDTO {
    
 	private Long id;
@@ -7,6 +9,10 @@ public class DescobertasDTO {
     private String nome;
     private String designacao;
 	private String coDeNome;
+	
+	private List<InformacaosOrbitaisDTO> informacaosOrbitaisDTOs;
+	private List<MapaOrbitalDTO> mapaOrbitalDTOs;
+	private List<PropriedadesFisicasDTO> propriedadesFisicasDTOs;
 	
 	public Long getId() {
 		return id;
@@ -38,6 +44,25 @@ public class DescobertasDTO {
 	public void setCoDeNome(String coDeNome) {
 		this.coDeNome = coDeNome;
 	}
+	public List<InformacaosOrbitaisDTO> getInformacaosOrbitaisDTOs() {
+		return informacaosOrbitaisDTOs;
+	}
+	public void setInformacaosOrbitaisDTOs(List<InformacaosOrbitaisDTO> informacaosOrbitaisDTOs) {
+		this.informacaosOrbitaisDTOs = informacaosOrbitaisDTOs;
+	}
+	public List<MapaOrbitalDTO> getMapaOrbitalDTOs() {
+		return mapaOrbitalDTOs;
+	}
+	public void setMapaOrbitalDTOs(List<MapaOrbitalDTO> mapaOrbitalDTOs) {
+		this.mapaOrbitalDTOs = mapaOrbitalDTOs;
+	}
+	public List<PropriedadesFisicasDTO> getPropriedadesFisicasDTOs() {
+		return propriedadesFisicasDTOs;
+	}
+	public void setPropriedadesFisicasDTOs(List<PropriedadesFisicasDTO> propriedadesFisicasDTOs) {
+		this.propriedadesFisicasDTOs = propriedadesFisicasDTOs;
+	}
+	
 	
 	
 }
