@@ -1,17 +1,8 @@
-package com.project.cometa.Model;
+package com.project.cometa.DTOModel;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class PropriedadesFisicasDTO {
 
-@Entity
-public class PropriedadesFisicas {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
 	private String dimensoes;
 	private String massa;
 	private String velocidadeDeEscape;
@@ -47,5 +38,4 @@ public class PropriedadesFisicas {
 	public void setVelocidadeDeEscape(String velocidadeDeEscape) {
 		this.velocidadeDeEscape = velocidadeDeEscape;
 	}
-
 }
