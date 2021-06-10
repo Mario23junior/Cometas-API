@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class InformacaosOrbitais {
@@ -16,6 +19,9 @@ public class InformacaosOrbitais {
 	private Double pontoDeHorbitaProximoDoSol;
 	private Double pontoDeHorbitaAfastadoDoSol;
 	private boolean emObservacao;
+	
+	@ManyToOne
+	private Descobertas descobertas;
 	
 	public Long getId() {
 		return id;
@@ -53,4 +59,13 @@ public class InformacaosOrbitais {
 	public void setEmObservacao(boolean emObservacao) {
 		this.emObservacao = emObservacao;
 	}
+	
+	@JsonIgnore
+	public Descobertas getDescobertas() {
+		return descobertas;
+	}
+	public void setDescobertas(Descobertas descobertas) {
+		this.descobertas = descobertas;
+	}
+	
 }
