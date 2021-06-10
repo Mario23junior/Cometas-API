@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class MapaOrbital {
    
@@ -17,7 +19,10 @@ public class MapaOrbital {
 	
 	private Double periodoOrbital;
 	private Double Inclinacao;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date ultimaPassagem;
+	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date proximaPassagem;
 	
 	public Long getId() {
