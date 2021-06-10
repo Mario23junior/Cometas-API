@@ -7,8 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class MapaOrbital {
@@ -24,6 +26,9 @@ public class MapaOrbital {
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date proximaPassagem;
+	
+	@ManyToOne
+	private Descobertas descobertas;
 	
 	public Long getId() {
 		return id;
@@ -55,4 +60,13 @@ public class MapaOrbital {
 	public void setProximaPassagem(Date proximaPassagem) {
 		this.proximaPassagem = proximaPassagem;
 	}
+	@JsonIgnore
+	public Descobertas getDescobertas() {
+		return descobertas;
+	}
+	public void setDescobertas(Descobertas descobertas) {
+		this.descobertas = descobertas;
+	}
+	
+	
 }
