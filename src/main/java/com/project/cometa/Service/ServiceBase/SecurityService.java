@@ -1,7 +1,5 @@
 package com.project.cometa.Service.ServiceBase;
 
-import javax.transaction.Transactional;
-
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -19,11 +17,6 @@ public class SecurityService {
 		this.repositoryUsuario = repositoryUsuario;
 	}
 	
-	@Transactional
-	public Usuario salvarUser(Usuario usuario) {
-		return repositoryUsuario.save(usuario);
-	}
-	
 	public UserDetails findUserByUsername(String username) throws UserNotFoundExistes {
 	   
 		Usuario user = repositoryUsuario
@@ -39,8 +32,5 @@ public class SecurityService {
 			     .password(user.getSenha())
 			     .roles(roles)
 			     .build();
-			     
-	   
-			   
 	}
 }
