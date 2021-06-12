@@ -25,7 +25,7 @@ http://localhost:8080/swagger-ui.html
 ```
 # uso
 
-## realiza seu cadastro na api na url user
+## realiza seu cadastro na api 
 ```
 http://localhost:8080/api/v1/user
 ```
