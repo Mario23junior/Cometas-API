@@ -1,4 +1,8 @@
- # Api de listagem de Cometas
+<p align="center"><img src="logo/logo.gif" width = "723px" height="383px"></p>
+
+<h1 align="center">Cometas-API</h1>
+
+# Api de listagem de Cometas
 
 API REST de código aberto para dados de consulta de  pesquisa  as informações nela contida  foi desenvolvida usando como base nos dados da <a href="https://www.nasa.gov/subject/6893/nebulae/" target="_blank">NASA</a>
  e <a href="https://chandra.harvard.edu/photo/2007/orion/"></a> usando como base organizacional um sistema de CRUD
