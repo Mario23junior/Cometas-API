@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "eb6d525e-56a5-4510-9c82-98bf12c9d05b",
+		"name": "api-cometa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Descobertas",
+			"item": [
+				{
+					"name": "Salvando descobertas de cometa no banco de dados",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \n    \"imagen\":\"https://images.educamaisbrasil.com.br/content/banco_de_imagens/guia-de-estudo/D/cometa-halley-astronomia.jpg\",\n    \"nome\":\"Halley\",\n    \"designacao\":\"P1\",\n    \"coDeNome\":\"Cometa Halley ,P1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/cometa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"cometa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando decorbertas cometas por id",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mario",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/cometa/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"cometa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletando informacãos de descoberta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/cometa/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"cometa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando informações  da tabela descoberta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \n    \"imagen\":\"https://images.educamaisbrasil.com.br/content/banco_de_imagens/guia-de-estudo/D/cometa-halley-astronomia.jpg\",\n    \"nome\":\"Halley\",\n    \"designacao\":\"P1\",\n    \"coDeNome\":\"Cometa Halley ,P1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/cometa/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"cometa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Informações Orbitais",
+			"item": [
+				{
+					"name": "Salvando informações orbitais do cometa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"excentricidade\": 0.967,\n    \"semiEixoMaior\":17.8,\n    \"pontoDeHorbitaProximoDoSol\": 0.586,\n    \"pontoDeHorbitaAfastadoDoSol\": 35.1,\n    \"emObservacao\": \"false\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/informcaosOrbitais",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"informcaosOrbitais"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando informações  Orbitais do cometa na base de dados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/informcaosOrbitais/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"informcaosOrbitais",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletando informações  Orbitais do cometa na base de dados",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/informcaosOrbitais/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"informcaosOrbitais",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando informações Orbitais do cometa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"excentricidade\": 0.967,\n    \"semiEixoMaior\": 17.8,\n    \"pontoDeHorbitaProximoDoSol\": 0.586,\n    \"pontoDeHorbitaAfastadoDoSol\": 35.1,\n    \"emObservacao\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/informcaosOrbitais/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"informcaosOrbitais",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mapa Orbital",
+			"item": [
+				{
+					"name": "salvando informações matematicas sobre o cometa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"periodoOrbital\": 75.3,\n    \"inclinacao\": 162.3,\n    \"ultimaPassagem\": \"09/02/1986\",\n    \"proximaPassagem\": \"28/07/2061\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/mapaOrbital",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"mapaOrbital"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIstando cometas da base de dados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/mapaOrbital/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"mapaOrbital",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletando mapa orbital",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/mapaOrbital/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"mapaOrbital",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando informaçãos de MapaOrbital",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"periodoOrbital\": 75.3,\n    \"inclinacao\": 162.3,\n    \"ultimaPassagem\": \"09/02/1986\",\n    \"proximaPassagem\": \"28/07/2061\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/mapaOrbital/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"mapaOrbital",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Salvando propriedades fisicas",
+			"item": [
+				{
+					"name": "Salvando as propriedade fisicas do cometa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dimensoes\": \"15x8km\",\n    \"massa\": \"2,2x10¹⁴kg\",\n    \"velocidadeDeEscape\": \"~0,002 km/s\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/propriendadesFisicas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"propriendadesFisicas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando propriedades fisicas do planeta por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/propriendadesFisicas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"propriendadesFisicas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando propriedades por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/api/propriendadesFisicas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"propriendadesFisicas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando Propriedades fisicas do cometa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dimensoes\": \"15x8km\",\n    \"massa\": \"2,2x10¹⁴kg\",\n    \"velocidadeDeEscape\": \"~0,002 km/s\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/propriendadesFisicas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"propriendadesFisicas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "listando todos os dados DTO",
+			"item": [
+				{
+					"name": "Listando dados da entidade DTO dados finais",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "mario",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/api/listAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"api",
+								"listAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "salvando usuarios no banco de dados",
+			"item": [
+				{
+					"name": "Salvando usuarios no banco de dados",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\":\"mario\",\n    \"senha\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
